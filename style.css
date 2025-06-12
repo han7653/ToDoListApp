@@ -1,0 +1,208 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f7f8fa;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+}
+
+.todo-container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 동기 부여 명언 */
+#quote-box {
+    text-align: center;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+/* 프로그레스 바 */
+#progress-container {
+    position: relative;
+    height: 25px;
+    background: #eee;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+#progress-bar {
+    height: 100%;
+    width: 0;
+    background: #2b88f0;
+    transition: width 0.5s;
+}
+
+#progress-text {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 0;
+    line-height: 25px;
+    font-weight: bold;
+}
+
+/* 모드 버튼 */
+.mode-btn {
+    margin: 0 5px;
+    padding: 6px 12px;
+    cursor: pointer;
+    border: none;
+    background: #e0e0e0;
+}
+
+.mode-btn.active {
+    background: #2b88f0;
+    color: white;
+}
+
+/* 캘린더 뷰 */
+#calendar-view {
+    display: none;
+    padding: 10px;
+    background: #fafafa;
+    border-radius: 6px;
+}
+
+/* todo-item 애니메이션 */
+.todo-item {
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: fadeIn 0.3s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* 슬라이드아웃 삭제 효과 */
+@keyframes slideOut {
+    to {
+        opacity: 0;
+        transform: translateX(100%);
+        height: 0;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.todo-item.removing {
+    animation: slideOut 0.4s forwards;
+}
+
+#todo-form,
+#backup-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+#todo-input,
+#todo-date,
+#todo-priority {
+    flex: 1;
+    padding: 8px;
+}
+
+button {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+#backup-actions input {
+    flex: 1;
+}
+
+#todo-list {
+    list-style: none;
+    padding: 0;
+}
+
+.todo-item {
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    background: #f0f0f0;
+    transition: background 0.3s;
+}
+
+.todo-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.todo-text {
+    font-size: 16px;
+    font-weight: 500;
+    flex: 1;
+    cursor: pointer;
+}
+
+.todo-date,
+.todo-dday {
+    font-size: 12px;
+    color: #555;
+    margin-left: 8px;
+}
+
+.low {
+    border-left: 6px solid #5cb85c;
+}
+
+.medium {
+    border-left: 6px solid #f0ad4e;
+}
+
+.high {
+    border-left: 6px solid #d9534f;
+}
+
+.todo-actions {
+    display: flex;
+    gap: 6px;
+    margin-top: 8px;
+}
+
+.todo-actions button {
+    flex: 1;
+    border: none;
+    border-radius: 4px;
+    padding: 6px;
+    font-weight: bold;
+}
+
+.complete-btn {
+    background: #e0f8e0;
+    color: #2a8c2a;
+}
+
+.incomplete-btn {
+    background: #e8ecff;
+    color: #3b4ed9;
+}
+
+.delete-btn {
+    background: #ffe0e0;
+    color: #c21e1e;
+}
+
+.edit-btn {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.active-btn {
+    box-shadow: inset 0 0 0 2px #333;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>강력한 할 일 목록</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <meta name="theme-color" content="#2b88f0">
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('serviceWorker.js');
+    }
+  </script>
+  <link rel="apple-touch-icon" href="123.png">
+  <meta name="theme-color" content="#2b88f0">
+  <link rel="manifest" href="manifest.json">
+</head>
+
+<body>
+  <div class="todo-container">
+    <h1>🚀 할 일 목록</h1>
+    <div id="quote-box"></div>
+    <div id="progress-container">
+      <div id="progress-bar"></div>
+      <div id="progress-text">0%</div>
+    </div>
+
+    <form id="todo-form">
+      <input type="text" id="todo-input" placeholder="할 일을 입력하세요..." required />
+      <input type="date" id="todo-date" />
+      <select id="todo-priority">
+        <option value="low">🟢 낮음</option>
+        <option value="medium">🟡 중간</option>
+        <option value="high">🔴 높음</option>
+      </select>
+      <button type="submit">추가</button>
+    </form>
+
+    <div id="mode-switch">
+      <button id="mode-all" class="mode-btn active">전체 보기</button>
+      <button id="mode-calendar" class="mode-btn">캘린더 보기</button>
+    </div>
+
+    <ul id="todo-list"></ul>
+    <div id="calendar-view"></div>
+
+    <div id="backup-actions">
+      <button id="export-btn">백업 내보내기</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
